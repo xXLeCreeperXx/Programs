@@ -103,7 +103,7 @@ function Launcher-Text {
 function Launcher-Function {
     do
     {
-    Browser-Text
+    Launcher-Text
     $selection = Read-Host "Please make a selection"
     switch ($selection)
     {
