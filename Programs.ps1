@@ -26,7 +26,7 @@ function Start-Function {
         } 
 
     '2' {
-        'You chose option #2'
+        Launcher-Function
         } 
 
     '3' {
@@ -79,6 +79,53 @@ function Browser-Function {
     '5' {
         Brave-Function
         }         
+    }
+    }
+    until ($selection -eq 'q')  
+    
+}
+
+function Launcher-Text {
+    param (
+        [string]$Title = 'Launcher'
+    )
+    Clear-Host
+    Write-Host "================ $Title ================"
+
+    Write-Host "1: Steam"
+    Write-Host "2: EpicGames"
+    Write-Host "3: GOG"
+    Write-Host "4: Ubisoft Connect"
+    Write-Host "5: Xbox GamePass App"
+    Write-Host "Q: Press 'Q' to quit."
+}
+
+function Launcher-Function {
+    do
+    {
+    Browser-Text
+    $selection = Read-Host "Please make a selection"
+    switch ($selection)
+    {
+    '1' {
+        Steam-Function
+        } 
+
+    '2' {
+        EpicGames-Function
+        } 
+
+    '3' {
+        GOG-Function
+        }
+        
+    '4' {
+        UbisoftConnect-Function
+        }    
+
+    '5' {
+        XboxApp-Function
+        }     
     }
     }
     until ($selection -eq 'q')  
@@ -264,6 +311,196 @@ function Opera-Function {
         Write-Host "Uninstalling Opera Browser"
         cmd.exe /c winget uninstall -e --id Opera.Opera
         Write-Host "Finished Uninstalling Opera" -ForegroundColor red
+        Pause
+        } 
+    }
+    }
+    until ($selection -eq 'q')
+    
+}
+
+function Steam-Text {
+    param (
+        [string]$Title = 'Steam'
+    )
+    Clear-Host
+    Write-Host "================ $Title ================"
+    
+    Write-Host "1: Install"
+    Write-Host "2: Uninstall"
+    Write-Host "Q: Press 'Q' to quit."
+}
+
+function Steam-Function {
+    do
+    {
+    Steam-Text
+    $selection = Read-Host "Please make a selection"
+    switch ($selection)
+    {
+    '1' {
+        Write-Host "Installing Steam"
+        cmd.exe /c winget install -e --id Valve.Steam
+        Write-Host "Finished Installing Steam" -ForegroundColor red
+        Pause
+        } 
+
+    '2' {
+        Write-Host "Uninstalling Steam"
+        cmd.exe /c winget uninstall -e --id Valve.Steam
+        Write-Host "Finished Uninstalling Steam" -ForegroundColor red
+        Pause
+        } 
+    }
+    }
+    until ($selection -eq 'q')
+    
+}
+
+function EpicGames-Text {
+    param (
+        [string]$Title = 'EpicGames'
+    )
+    Clear-Host
+    Write-Host "================ $Title ================"
+    
+    Write-Host "1: Install"
+    Write-Host "2: Uninstall"
+    Write-Host "Q: Press 'Q' to quit."
+}
+
+function EpicGames-Function {
+    do
+    {
+    EpicGames-Text
+    $selection = Read-Host "Please make a selection"
+    switch ($selection)
+    {
+    '1' {
+        Write-Host "Installing EpicGames"
+        cmd.exe /c winget install -e --id EpicGames.EpicGamesLauncher
+        Write-Host "Finished Installing EpicGames" -ForegroundColor red
+        Pause
+        } 
+
+    '2' {
+        Write-Host "Uninstalling EpicGames"
+        cmd.exe /c winget uninstall -e --id EpicGames.EpicGamesLauncher
+        Write-Host "Finished Uninstalling EpicGames" -ForegroundColor red
+        Pause
+        } 
+    }
+    }
+    until ($selection -eq 'q')
+    
+}
+
+function GOG-Text {
+    param (
+        [string]$Title = 'GOG'
+    )
+    Clear-Host
+    Write-Host "================ $Title ================"
+    
+    Write-Host "1: Install"
+    Write-Host "2: Uninstall"
+    Write-Host "Q: Press 'Q' to quit."
+}
+
+function GOG-Function {
+    do
+    {
+    GOG-Text
+    $selection = Read-Host "Please make a selection"
+    switch ($selection)
+    {
+    '1' {
+        Write-Host "Installing GOG"
+        cmd.exe /c winget install -e --id GOG.Galaxy
+        Write-Host "Finished Installing GOG" -ForegroundColor red
+        Pause
+        } 
+
+    '2' {
+        Write-Host "Uninstalling GOG"
+        cmd.exe /c winget uninstall -e --id GOG.Galaxy
+        Write-Host "Finished Uninstalling GOG" -ForegroundColor red
+        Pause
+        } 
+    }
+    }
+    until ($selection -eq 'q')
+    
+}
+
+function UbisoftConnect-Text {
+    param (
+        [string]$Title = 'UbisoftConnect'
+    )
+    Clear-Host
+    Write-Host "================ $Title ================"
+    
+    Write-Host "1: Install"
+    Write-Host "2: Uninstall"
+    Write-Host "Q: Press 'Q' to quit."
+}
+
+function UbisoftConnect-Function {
+    do
+    {
+    UbisoftConnect-Text
+    $selection = Read-Host "Please make a selection"
+    switch ($selection)
+    {
+    '1' {
+        Write-Host "Installing UbisoftConnect"
+        cmd.exe /c winget install -e --id Ubisoft.Connect
+        Write-Host "Finished Installing UbisoftConnect" -ForegroundColor red
+        Pause
+        } 
+
+    '2' {
+        Write-Host "Uninstalling UbisoftConnect"
+        cmd.exe /c winget uninstall -e --id Ubisoft.Connect
+        Write-Host "Finished Uninstalling UbisoftConnect" -ForegroundColor red
+        Pause
+        } 
+    }
+    }
+    until ($selection -eq 'q')
+    
+}
+
+function XboxApp-Text {
+    param (
+        [string]$Title = 'XboxApp'
+    )
+    Clear-Host
+    Write-Host "================ $Title ================"
+    
+    Write-Host "1: Install"
+    Write-Host "2: Uninstall"
+    Write-Host "Q: Press 'Q' to quit."
+}
+
+function XboxApp-Function {
+    do
+    {
+    XboxApp-Text
+    $selection = Read-Host "Please make a selection"
+    switch ($selection)
+    {
+    '1' {
+        Write-Host "Installing XboxApp"
+        cmd.exe /c winget install 9MV0B5HZVK9Z
+        Write-Host "Finished Installing XboxApp" -ForegroundColor red
+        Pause
+        } 
+
+    '2' {
+        Write-Host "Uninstalling XboxApp"
+        cmd.exe /c winget uninstall 9MV0B5HZVK9Z
+        Write-Host "Finished Uninstalling XboxApp" -ForegroundColor red
         Pause
         } 
     }
