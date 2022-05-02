@@ -30,7 +30,7 @@ function Start-Function {
         } 
 
     '3' {
-        'You chose option #3'
+        Utilitys-Function
         }
 
     }
@@ -125,6 +125,53 @@ function Launcher-Function {
 
     '5' {
         XboxApp-Function
+        }     
+    }
+    }
+    until ($selection -eq 'q')  
+    
+}
+
+function Utilitys-Text {
+    param (
+        [string]$Title = 'Launcher'
+    )
+    Clear-Host
+    Write-Host "================ $Title ================"
+
+    Write-Host "1: Steam"
+    Write-Host "2: EpicGames"
+    Write-Host "3: GOG"
+    Write-Host "4: Ubisoft Connect"
+    Write-Host "5: Xbox GamePass App"
+    Write-Host "Q: Press 'Q' to quit."
+}
+
+function Utilitys-Function {
+    do
+    {
+    Utilitys-Text
+    $selection = Read-Host "Please make a selection"
+    switch ($selection)
+    {
+    '1' {
+        
+        } 
+
+    '2' {
+        
+        } 
+
+    '3' {
+        
+        }
+        
+    '4' {
+        
+        }    
+
+    '5' {
+        
         }     
     }
     }
